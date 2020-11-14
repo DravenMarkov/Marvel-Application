@@ -1,4 +1,6 @@
 package com.example.marvelapplication.ui.detail
 
-class DetailViewModel {
+import androidx.lifecycle.ViewModel
+
+class DetailViewModel : ViewModel() {
 }

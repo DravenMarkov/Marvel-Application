@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 abstract class BaseFragment : Fragment() {
 
@@ -14,10 +15,17 @@ abstract class BaseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(bindLayout(), container, false)
-        return view
+        return inflater.inflate(bindLayout(), container, false)
     }
 
     @LayoutRes
     abstract fun bindLayout(): Int
+
+    protected fun showProgressBar() {
+        activity?.progressbar?.visibility = View.VISIBLE
+    }
+
+    protected fun hideProgressBar() {
+        activity?.progressbar?.visibility = View.GONE
+    }
 }
