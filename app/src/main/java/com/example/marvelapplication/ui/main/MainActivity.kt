@@ -1,12 +1,13 @@
 package com.example.marvelapplication.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.example.marvelapplication.R
+import com.example.marvelapplication.ui.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+class MainActivity : BaseActivity() {
+
+    override fun getContentView(): Int = R.layout.activity_main
+
+
+
+
 }
