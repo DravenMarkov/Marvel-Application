@@ -10,10 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:contentDescription="Character image"
-        android:src="@mipmap/ic_launcher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_placeholder" />
 
     <TextView
         android:id="@+id/character_name_title_tv"
@@ -26,7 +26,8 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@id/character_name_value_tv"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/character_image_iv" />
+        app:layout_constraintTop_toBottomOf="@id/character_image_iv"
+        app:layout_constraintBottom_toTopOf="@id/character_description_tv"/>
 
     <TextView
         android:id="@+id/character_name_value_tv"
@@ -39,6 +40,15 @@
         app:layout_constraintStart_toEndOf="@id/character_name_title_tv"
         app:layout_constraintTop_toTopOf="@id/character_name_title_tv"
         tools:text="MissingNo." />
+
+    <TextView
+        android:id="@+id/character_description_tv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_name_title_tv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

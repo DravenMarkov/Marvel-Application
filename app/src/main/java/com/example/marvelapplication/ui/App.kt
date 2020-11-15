@@ -3,6 +3,7 @@ package com.example.marvelapplication.ui
 import android.app.Application
 import com.example.marvelapplication.di.appModule
 import com.example.marvelapplication.di.netModule
+import com.example.marvelapplication.di.repositoryModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -17,7 +18,8 @@ class App : Application() {
             modules(
                 listOf(
                     appModule,
-                    netModule
+                    netModule,
+                    repositoryModule
                 )
             )
         }

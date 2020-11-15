@@ -1,6 +1,7 @@
 package com.example.marvelapplication.di
 
 import com.example.marvelapplication.data.api.MarvelApi
+import com.example.marvelapplication.domain.repository.MarvelRepository
 import com.example.marvelapplication.ui.detail.DetailViewModel
 import com.example.marvelapplication.ui.home.HomeViewModel
 import com.example.marvelapplication.utils.Consts
@@ -19,6 +20,10 @@ val appModule = module {
 
     viewModel { DetailViewModel() }
 
+}
+
+val repositoryModule = module {
+    factory { MarvelRepository() }
 }
 
 val netModule = module {
