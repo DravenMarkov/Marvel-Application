@@ -1,5 +1,9 @@
 package com.example.marvelapplication.data.entity
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class CharacterData(
     val attributionHTML: String,
     val attributionText: String,
@@ -20,6 +24,7 @@ data class CharacterData(
             val comics: Comics,
             val description: String,
             val events: Events,
+            @PrimaryKey
             val id: Int,
             val modified: String,
             val name: String,

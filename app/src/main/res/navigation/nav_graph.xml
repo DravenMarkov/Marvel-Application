@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_dest"
-        android:name="com.example.marvelapplication.ui.home.HomeFragment"
+        android:name="com.example.marvelapplication.presentation.home.HomeFragment"
         android:label="Inicio"
         tools:layout="@layout/home_fragment">
         <action
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/detail_dest"
-        android:name="com.example.marvelapplication.ui.detail.DetailFragment"
+        android:name="com.example.marvelapplication.presentation.detail.DetailFragment"
         android:label="Inicio"
         tools:layout="@layout/detail_fragment">
         <action

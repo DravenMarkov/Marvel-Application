@@ -1,9 +1,9 @@
-package com.example.marvelapplication.ui.main
+package com.example.marvelapplication.presentation.main
 
 
 import androidx.appcompat.widget.Toolbar
 import com.example.marvelapplication.R
-import com.example.marvelapplication.ui.base.BaseActivity
+import com.example.marvelapplication.presentation.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {

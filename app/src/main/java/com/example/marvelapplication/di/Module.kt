@@ -1,12 +1,14 @@
 package com.example.marvelapplication.di
 
+import android.content.Context
 import com.example.marvelapplication.BuildConfig
 import com.example.marvelapplication.data.api.MarvelApi
+import com.example.marvelapplication.data.database.CharacterDataBase
 import com.example.marvelapplication.domain.repository.MarvelRepository
 import com.example.marvelapplication.domain.usecase.CharacterUseCase
 import com.example.marvelapplication.domain.usecase.GetCharactersListUseCase
-import com.example.marvelapplication.ui.detail.DetailViewModel
-import com.example.marvelapplication.ui.home.HomeViewModel
+import com.example.marvelapplication.presentation.detail.DetailViewModel
+import com.example.marvelapplication.presentation.home.HomeViewModel
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -33,6 +35,10 @@ val useCase = module {
     factory { CharacterUseCase() }
 
     factory { GetCharactersListUseCase() }
+}
+
+val dataBase = module {
+    single { provideDataBase(get()) }
 }
 
 val netModule = module {
@@ -71,3 +77,6 @@ fun provideOkHttpClient(): OkHttpClient =
 
 fun provideMarvelApiServices(retrofit: Retrofit): MarvelApi =
     retrofit.create(MarvelApi::class.java)
+
+fun provideDataBase(context: Context): CharacterDataBase =
+    CharacterDataBase.getDatabaseInstance(context)

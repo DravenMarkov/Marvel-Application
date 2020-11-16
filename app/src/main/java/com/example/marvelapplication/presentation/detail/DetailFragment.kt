@@ -1,11 +1,11 @@
-package com.example.marvelapplication.ui.detail
+package com.example.marvelapplication.presentation.detail
 
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.marvelapplication.R
-import com.example.marvelapplication.ui.base.BaseFragment
+import com.example.marvelapplication.presentation.base.BaseFragment
 import kotlinx.android.synthetic.main.detail_fragment.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -22,7 +22,7 @@ class DetailFragment : BaseFragment() {
 
         val characterId: Int = requireArguments().getInt("character_id")
 
-        viewModel.getCharacter(characterId)
+        viewModel.getCharacterFromDB(characterId)
 
         setViewModel()
     }
@@ -30,12 +30,12 @@ class DetailFragment : BaseFragment() {
     private fun setViewModel() {
         viewModel.getCharacterLiveData().observe(viewLifecycleOwner, Observer {
             Glide.with(context)
-                .load(it[0].thumbnail.path + "." + it[0].thumbnail.extension)
+                .load(it.thumbnail)
                 .placeholder(R.mipmap.ic_placeholder)
                 .centerCrop()
                 .into(character_image_iv)
-            character_name_value_tv.text = it[0].name
-            character_description_tv.text = it[0].description
+            character_name_value_tv.text = it.name
+            character_description_tv.text = it.description
             hideProgressBar()
         })
     }

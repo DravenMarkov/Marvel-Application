@@ -1,4 +1,4 @@
-package com.example.marvelapplication.ui.home
+package com.example.marvelapplication.presentation.home
 
 import android.os.Bundle
 import android.view.View
@@ -8,8 +8,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelapplication.R
 import com.example.marvelapplication.domain.entity.MarvelCharactersEntity
-import com.example.marvelapplication.ui.base.BaseFragment
-import com.example.marvelapplication.ui.home.adapter.HomeAdapter
+import com.example.marvelapplication.presentation.base.BaseFragment
+import com.example.marvelapplication.presentation.home.adapter.HomeAdapter
 import kotlinx.android.synthetic.main.home_fragment.*
 import org.koin.android.viewmodel.ext.android.viewModel
 

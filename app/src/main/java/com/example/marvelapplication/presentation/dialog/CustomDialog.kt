@@ -1,4 +1,4 @@
-package com.example.marvelapplication.ui.dialog
+package com.example.marvelapplication.presentation.dialog
 
 import android.app.AlertDialog
 import android.app.Dialog

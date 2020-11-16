@@ -13,31 +13,23 @@ class CharacterMapper {
             )
         }
 
-        fun convertData(model: CharacterData.Data): CharacterEntity.Data = with(model) {
+        private fun convertData(model: CharacterData.Data): CharacterEntity.Data = with(model) {
             CharacterEntity.Data(
-                results = convertResulst(results)
+                results = convertResults(results)
             )
         }
 
-        fun convertResulst(listResult: List<CharacterData.Data.Result>): List<CharacterEntity.Data.Result> =
+        private fun convertResults(listResult: List<CharacterData.Data.Result>): List<CharacterEntity.Data.Result> =
             listResult.map { convertResult(it) }
 
-        fun convertResult(model: CharacterData.Data.Result): CharacterEntity.Data.Result =
+        private fun convertResult(model: CharacterData.Data.Result): CharacterEntity.Data.Result =
             with(model) {
                 CharacterEntity.Data.Result(
                     id = id,
                     name = name,
                     resourceURI = resourceURI,
-                    thumbnail = convertThumbnail(thumbnail),
+                    thumbnail = thumbnail.path + "." + thumbnail.extension,
                     description = description
-                )
-            }
-
-        fun convertThumbnail(model: CharacterData.Data.Result.Thumbnail): CharacterEntity.Data.Result.Thumbnail =
-            with(model) {
-                CharacterEntity.Data.Result.Thumbnail(
-                    extension = extension,
-                    path = path
                 )
             }
     }

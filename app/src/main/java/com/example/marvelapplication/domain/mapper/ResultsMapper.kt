@@ -9,7 +9,7 @@ class ResultsMapper {
         fun convert(listResult: List<MarvelCharactersData.Data.Result>): List<MarvelCharactersEntity.Data.Result> =
             listResult.map { convert(it) }
 
-        fun convert(model: MarvelCharactersData.Data.Result): MarvelCharactersEntity.Data.Result =
+        private fun convert(model: MarvelCharactersData.Data.Result): MarvelCharactersEntity.Data.Result =
             with(model) {
                 MarvelCharactersEntity.Data.Result(
                     id = id,
@@ -19,7 +19,7 @@ class ResultsMapper {
                 )
             }
 
-        fun convertThumbnail(model: MarvelCharactersData.Data.Result.Thumbnail): MarvelCharactersEntity.Data.Result.Thumbnail =
+        private fun convertThumbnail(model: MarvelCharactersData.Data.Result.Thumbnail): MarvelCharactersEntity.Data.Result.Thumbnail =
             with(model) {
                 MarvelCharactersEntity.Data.Result.Thumbnail(
                     extension = extension,

@@ -1,4 +1,4 @@
-package com.example.marvelapplication.ui.home
+package com.example.marvelapplication.presentation.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
