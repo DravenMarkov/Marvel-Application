@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.marvelapplication.di.appModule
 import com.example.marvelapplication.di.netModule
 import com.example.marvelapplication.di.repositoryModule
+import com.example.marvelapplication.di.useCase
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -19,7 +20,8 @@ class App : Application() {
                 listOf(
                     appModule,
                     netModule,
-                    repositoryModule
+                    repositoryModule,
+                    useCase
                 )
             )
         }

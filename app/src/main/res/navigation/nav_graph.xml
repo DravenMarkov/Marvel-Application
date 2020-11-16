@@ -13,7 +13,7 @@
         <action
             android:id="@+id/action_home_to_detail_dest"
             app:destination="@+id/detail_dest"
-            app:enterAnim="@anim/fragment_fade_enter"/>
+            app:enterAnim="@anim/fragment_fade_enter" />
     </fragment>
 
 
@@ -25,7 +25,7 @@
         <action
             android:id="@+id/action_home_to_detail_dest"
             app:destination="@+id/home_dest"
-            app:enterAnim="@anim/fragment_close_exit"/>
+            app:enterAnim="@anim/fragment_close_exit" />
     </fragment>
 
 </navigation>

@@ -7,4 +7,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TitleText">
+        <item name="fontFamily">@font/comic_font</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/red_ribbon</item>
+    </style>
+
+    <style name="DescriptionText">
+        <item name="fontFamily">@font/comic_font</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/diesel</item>
+    </style>
+
+    <style name="NameText">
+        <item name="fontFamily">@font/comic_font</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/diesel</item>
+    </style>
+
 </resources>

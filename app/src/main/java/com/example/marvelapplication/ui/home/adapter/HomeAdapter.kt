@@ -39,7 +39,7 @@ class HomeAdapter(private val context: Context) : RecyclerView.Adapter<HomeAdapt
         fun setData(character: MarvelCharactersEntity.Data.Result) {
             itemView.character_name_tv.text = character.name
             Glide.with(context)
-                .load( character.thumbnail.path+ "." + character.thumbnail.extension)
+                .load(character.thumbnail.path + "." + character.thumbnail.extension)
                 .override(150, 150)
                 .centerCrop()
                 .placeholder(R.mipmap.ic_placeholder)

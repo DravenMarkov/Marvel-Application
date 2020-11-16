@@ -1,12 +1,15 @@
 package com.example.marvelapplication.di
 
+import com.example.marvelapplication.BuildConfig
 import com.example.marvelapplication.data.api.MarvelApi
 import com.example.marvelapplication.domain.repository.MarvelRepository
+import com.example.marvelapplication.domain.usecase.CharacterUseCase
+import com.example.marvelapplication.domain.usecase.GetCharactersListUseCase
 import com.example.marvelapplication.ui.detail.DetailViewModel
 import com.example.marvelapplication.ui.home.HomeViewModel
-import com.example.marvelapplication.utils.Consts
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -24,6 +27,12 @@ val appModule = module {
 
 val repositoryModule = module {
     factory { MarvelRepository() }
+}
+
+val useCase = module {
+    factory { CharacterUseCase() }
+
+    factory { GetCharactersListUseCase() }
 }
 
 val netModule = module {
@@ -48,8 +57,8 @@ fun provideGson(): Gson =
 fun providesRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit =
     Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create(gson))
-        //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-        .baseUrl(Consts.BASE_URL)
+        .addCallAdapterFactory(CoroutineCallAdapterFactory())
+        .baseUrl(BuildConfig.BASE_URL)
         .client(okHttpClient)
         .build()
 

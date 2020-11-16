@@ -10,18 +10,17 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:padding="10dp"
-        tool:src="@mipmap/ic_placeholder"
         app:layout_constraintBottom_toTopOf="@id/character_name_tv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tool:src="@mipmap/ic_placeholder" />
 
     <TextView
         android:id="@+id/character_name_tv"
+        style="@style/NameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/character_image_iv"
         app:layout_constraintStart_toStartOf="@id/character_image_iv"
