@@ -1,7 +1,7 @@
 package com.example.marvelapplication.domain.usecase
 
 import com.example.marvelapplication.domain.entity.CharacterEntity
-import com.example.marvelapplication.domain.repository.MarvelRepository
+import com.example.marvelapplication.data.repository.MarvelRepository
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 

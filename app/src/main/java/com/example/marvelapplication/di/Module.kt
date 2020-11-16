@@ -4,7 +4,7 @@ import android.content.Context
 import com.example.marvelapplication.BuildConfig
 import com.example.marvelapplication.data.api.MarvelApi
 import com.example.marvelapplication.data.database.CharacterDataBase
-import com.example.marvelapplication.domain.repository.MarvelRepository
+import com.example.marvelapplication.data.repository.MarvelRepository
 import com.example.marvelapplication.domain.usecase.CharacterUseCase
 import com.example.marvelapplication.domain.usecase.GetCharactersListUseCase
 import com.example.marvelapplication.presentation.detail.DetailViewModel
