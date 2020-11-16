@@ -15,24 +15,25 @@ import org.koin.core.inject
 
 class DetailViewModel : ViewModel(), KoinComponent {
 
-    private val character = MutableLiveData<CharacterEntity.Data.Result>()
+    private val characterLiveData = MutableLiveData<CharacterEntity.Data.Result>()
     private val useCase: CharacterUseCase by inject()
-    private val dataBaseInstance: CharacterDataBase by inject()
+    private val characterDataBase: CharacterDataBase by inject()
 
     private fun saveCharacterIntoDb(character: CharacterEntity.Data.Result) {
-        dataBaseInstance.characterDao().insert(character)
+        characterDataBase.characterDao().insert(character)
     }
 
     fun getCharacterFromDB(characterId: Int) {
-        if (dataBaseInstance.characterDao().isExist(characterId)) {
-            character.value = dataBaseInstance.characterDao().findCharacterById(characterId)
+        if (characterDataBase.characterDao().isExist(characterId)) {
+            characterLiveData.value =
+                characterDataBase.characterDao().findCharacterById(characterId)
         } else {
             getCharacter(characterId)
         }
     }
 
     private fun setCharacterData(character: CharacterEntity) {
-        this.character.value = character.data.results[0]
+        this.characterLiveData.value = character.data.results[0]
         saveCharacterIntoDb(character.data.results[0])
     }
 
@@ -45,6 +46,6 @@ class DetailViewModel : ViewModel(), KoinComponent {
     }
 
     fun getCharacterLiveData(): LiveData<CharacterEntity.Data.Result> {
-        return character
+        return characterLiveData
     }
 }

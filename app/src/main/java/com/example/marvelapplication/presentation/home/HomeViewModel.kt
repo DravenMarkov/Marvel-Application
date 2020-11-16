@@ -17,7 +17,7 @@ class HomeViewModel : ViewModel(), KoinComponent {
 
     private val useCase: GetCharactersListUseCase by inject()
 
-    private val liveMarvelCharacterList =
+    private val marvelCharactersLiveData =
         MutableLiveData<List<MarvelCharactersEntity.Data.Result>>()
 
     private val characterList = mutableListOf<MarvelCharactersEntity.Data.Result>()
@@ -26,7 +26,7 @@ class HomeViewModel : ViewModel(), KoinComponent {
 
     private fun setListData(marvelCharactersEntity: MarvelCharactersEntity) {
         characterList.addAll(marvelCharactersEntity.data.results)
-        liveMarvelCharacterList.value = characterList
+        marvelCharactersLiveData.value = characterList
     }
 
     fun getListCharacters() {
@@ -40,6 +40,6 @@ class HomeViewModel : ViewModel(), KoinComponent {
     }
 
     fun getListCharactersLiveData(): LiveData<List<MarvelCharactersEntity.Data.Result>> {
-        return liveMarvelCharacterList
+        return marvelCharactersLiveData
     }
 }

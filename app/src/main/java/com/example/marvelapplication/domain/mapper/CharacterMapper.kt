@@ -6,7 +6,6 @@ import com.example.marvelapplication.domain.entity.CharacterEntity
 class CharacterMapper {
     companion object {
 
-
         fun convert(model: CharacterData): CharacterEntity = with(model) {
             CharacterEntity(
                 data = convertData(data)

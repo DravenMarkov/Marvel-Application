@@ -10,6 +10,7 @@ import com.example.marvelapplication.R
 import com.example.marvelapplication.domain.entity.MarvelCharactersEntity
 import com.example.marvelapplication.presentation.base.BaseFragment
 import com.example.marvelapplication.presentation.home.adapter.HomeAdapter
+import com.example.marvelapplication.utils.Consts
 import kotlinx.android.synthetic.main.home_fragment.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -50,7 +51,7 @@ class HomeFragment : BaseFragment() {
         adapter.onItemClick = {
             findNavController().navigate(
                 R.id.action_home_to_detail_dest,
-                bundleOf("character_id" to it.id)
+                bundleOf(Consts.CHARACTER_ID_TEXT to it.id)
             )
         }
     }
